@@ -15,7 +15,6 @@
   "homepage": "https://github.com/SirEpiclyAmazing/Purdy#readme",
   "dependencies": {
     "discord.js": "^12.5.3",
-    "random-puppy": "^1.1.0",
-    "snekfetch": "^4.0.4"
+    "random-puppy": "^1.1.0"
   }
 }

@@ -1,8 +1,9 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const token = 'example'//change that to your bot token. 
+const randomPuppy = require('random-puppy')
+const token = 'your-token' //this is just a placeholder. get ur real one from https://discord.com/developers
 const prefix = 'p!'
-
+const get = require('snekfetch')
 client.on('ready', () => {
     console.log('Bot is ready!')
 })
@@ -11,7 +12,7 @@ client.on('message', async msg => {
     if (msg.content === `${prefix}help`) {
         const options = new Discord.MessageEmbed()
         .setTitle('Help GUI')
-        .setDescription(':hammer: Moderation\n:magic_wand: Utility\n:rofl: Fun')
+        .setDescription(':hammer: Moderation\n:gear: Utility\n:rofl: Fun')
         .setFooter('The reactions were added to your message.')
         msg.channel.send(options)
         const hammer = new Discord.MessageEmbed()
@@ -20,7 +21,7 @@ client.on('message', async msg => {
         .setTimestamp()
         const rofl = new Discord.MessageEmbed()
         .setTitle('Fun')
-        .setDescription('soon')
+        .setDescription('Meme - get a random meme from reddit - usage: "p!meme", permissions required: none')
         .setTimestamp()
         const cog = new Discord.MessageEmbed()
         .setTitle('Utility')
@@ -84,6 +85,21 @@ msg.channel.send(noargs)
         }
     }
  }
+})
+
+client.on('message', async msg => {
+    if (msg.content === 'p!meme') {
+        const subReddits = ["meme", "me_irl", "dankmeme"]
+    const random = subReddits[Math.floor(Math.random() * subReddits.length)];
+    const img = await randomPuppy(random);
+
+    const embed = new Discord.MessageEmbed()
+    .setImage(img)
+    .setTitle(`From /r/${random}`)
+    .setURL(`http://reddit.com/${random}`)
+
+    msg.channel.send(embed);
+    }
 })
 
 client.login(token)

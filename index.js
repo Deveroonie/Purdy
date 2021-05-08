@@ -3,8 +3,7 @@ const client = new Discord.Client()
 const randomPuppy = require('random-puppy')
 const token = 'your-token' //this is just a placeholder. get ur real one from https://discord.com/developers
 const prefix = 'p!'
-const get = require('snekfetch')
-client.on('ready', () => {
+ client.on('ready', () => {
     console.log('Bot is ready!')
 })
 
@@ -101,5 +100,13 @@ client.on('message', async msg => {
     msg.channel.send(embed);
     }
 })
-
+client.on('message', msg => {
+    if (msg.content === 'p!github') {
+        msg.channel.send('We are open source and on GitHub: https://github.com/SirEpiclyAmazing/Purdy')
+    } else {
+        if (msg.content === 'p!support') {
+            msg.channel.send('https://discord.gg/SQWajtbrUv')
+        }
+    }
+})
 client.login(token)

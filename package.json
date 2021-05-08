@@ -1,0 +1,21 @@
+{
+  "name": "purdy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirEpiclyAmazing/Purdy.git"
+  },
+  "author": "SirEpiclyAmazing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SirEpiclyAmazing/Purdy/issues"
+  },
+  "homepage": "https://github.com/SirEpiclyAmazing/Purdy#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "random-puppy": "^1.1.0",
+    "snekfetch": "^4.0.4"
+  }
+}
